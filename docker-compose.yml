@@ -1,0 +1,13 @@
+version: "2"
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "4040:27017"
+    expose:
+      - "4040"
+  mydb:
+    build: ./mydb
+    links:
+      - mongo
